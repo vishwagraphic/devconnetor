@@ -1,3 +1,4 @@
 {
-    "mongo-uri": "mongodb+srv://Viswa123:Viswa123@cluster0-eripc.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongo-uri": "mongodb+srv://Viswa23:Viswa23@cluster0.eripc.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
