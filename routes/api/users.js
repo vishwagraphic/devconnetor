@@ -8,7 +8,7 @@ const config = require("config");
 
 const User = require("../../models/User");
 
-router.get(
+router.post(
   "/",
   [
     check("name", "Name is required").notEmpty(),
@@ -20,6 +20,7 @@ router.get(
     )
   ],
   async (req, res, next) => {
+    console.log(req);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });

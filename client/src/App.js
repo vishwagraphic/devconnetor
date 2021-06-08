@@ -1,16 +1,29 @@
 import React, { Fragment } from "react";
-import Navbar from "./components/layout/Navbar";
-import Layout from "./components/layout/Landing";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+import { StyledPages } from "./Main";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const App = () => (
-  <Fragment>
+  <Provider store={store}>
     <Router>
-      <Navbar />
-      <Route exact path="/" component={Layout} />
+      <Fragment>
+        <Navbar />
+        <StyledPages>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </StyledPages>
+      </Fragment>
     </Router>
-  </Fragment>
+  </Provider>
 );
 
 export default App;
